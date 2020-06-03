@@ -28,7 +28,7 @@ class CookBook
     new = coll.max_by do |recipe|
       recipe.total_calories
     end
-    new.first
+    coll[0]
   end
 
 end
