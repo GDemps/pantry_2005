@@ -17,4 +17,13 @@ class Recipe
     end
   end
 
+  def total_calories
+    coll = 0
+    @ingredients_required.each do |ing|
+      num = ing[0].calories * ing[1]
+      coll += num
+    end
+    coll
+  end
+
 end
