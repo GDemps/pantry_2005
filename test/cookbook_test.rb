@@ -21,7 +21,7 @@ class CookBookTest < Minitest::Test
     assert_equal [recipe1, recipe2], cookbook.recipes
   end
 
-  def test_case_name
+  def test_add_recipe_ingredients
     pantry = Pantry.new
     cookbook = CookBook.new
     ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
@@ -35,7 +35,9 @@ class CookBookTest < Minitest::Test
     recipe2.add_ingredient(ingredient1, 2)
     recipe2.add_ingredient(ingredient3, 4)
     recipe2.add_ingredient(ingredient4, 1)
-    assert_equal 440, recipe1.total_calories
+    cookbook.add_recipe(recipe1)
+    cookbook.add_recipe(recipe2)
+    assert_equal ["Cheese", "Macaroni", "Ground Beef", "Bun"], cookbook.ingredients
   end
 
 end

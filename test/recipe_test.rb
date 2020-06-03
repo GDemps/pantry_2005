@@ -47,5 +47,6 @@ class RecipeTest < Minitest::Test
       recipe2.add_ingredient(ingredient3, 4)
       recipe2.add_ingredient(ingredient4, 1)
       assert_equal 440, recipe1.total_calories
+      assert_equal 675, recipe2.total_calories
   end
 end
