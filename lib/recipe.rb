@@ -12,6 +12,9 @@ class Recipe
 
   def add_ingredient(ingredient, count)
     @ingredients_required[ingredient] += count
+    unless @ingredients.include?(ingredient)
+      @ingredients << ingredient
+    end
   end
 
 end
