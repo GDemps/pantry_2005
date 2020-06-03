@@ -25,6 +25,7 @@ class RecipeTest < Minitest::Test
     recipe1.add_ingredient(ingredient2, 8)
     assert_equal 6, recipe1.ingredients_required[ingredient1]
     assert_equal 8, recipe1.ingredients_required[ingredient2]
+    assert_equal [], recipe1.ingredients
   end
 
 
