@@ -1,4 +1,5 @@
 require './lib/recipe'
+require './lib/pantry'
 
 class CookBook
 
@@ -21,14 +22,10 @@ class CookBook
   end
 
   def highest_calorie_meal
-    coll = []
-    @recipes.each do |recipe|
-      coll << recipe
-    end
-    new = coll.max_by do |recipe|
+    coll = @recipes.max_by do |recipe|
       recipe.total_calories
     end
-    coll[0]
+    coll
   end
 
 end

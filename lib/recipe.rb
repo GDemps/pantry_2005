@@ -25,5 +25,4 @@ class Recipe
     end
     coll
   end
-
 end
