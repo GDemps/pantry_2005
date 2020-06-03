@@ -1,3 +1,5 @@
+require './lib/recipe'
+
 class CookBook
 
   attr_reader :recipes,
@@ -18,8 +20,15 @@ class CookBook
     end
   end
 
-  def method_name
-
+  def highest_calorie_meal
+    coll = []
+    @recipes.each do |recipe|
+      coll << recipe
+    end
+    new = coll.max_by do |recipe|
+      recipe.total_calories
+    end
+    new.first
   end
 
 end
