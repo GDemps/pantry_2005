@@ -10,4 +10,8 @@ class Pantry
     @stock[:ingredient]
   end
 
+  def restock(ingredient, count)
+    @stock[:ingredient] += count
+  end
+
 end
